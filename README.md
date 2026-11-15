@@ -4,9 +4,11 @@
 
 **把 AI 从“聊天助手”用成“完成工作的 Agent”。**
 
-[📘 根站已构建的在线版（独立 Pages 待启用）](https://aipmandy.github.io/doubao-work-handbook/) · [📄 PDF（40 页）](https://aipmandy.github.io/doubao-work-handbook/downloads/doubao-work-handbook.pdf) · [🛠 32 个任务模板](content/prompts.json) · [🔗 豆包工作官方入口](https://www.doubao.com/work)
+23 章完整教程 · 32 个任务模板 · 同源 PDF · 非官方独立开源。10 分钟起步就在下面。
 
-**版本** v1.0（2026-11-14） · **作者** AI 酋长 Andy / 星觉科技 · **原创独立第三方开源教程，非豆包、字节跳动或飞书官方资料**
+[📘 在线阅读（2026-11-15 复查 HTTP 200）](https://aipmandy.github.io/doubao-work-handbook/) · [📄 PDF（40 页）](https://aipmandy.github.io/doubao-work-handbook/downloads/doubao-work-handbook.pdf) · [🛠 32 个任务模板](content/prompts.json) · [🔗 豆包工作官方入口](https://www.doubao.com/work)
+
+**版本** v1.0（2026-11-14） · **作者** AI酋长Andy / 星觉科技 · **原创独立第三方开源教程，非豆包、字节跳动或飞书官方资料**
 
 </div>
 
@@ -53,9 +55,9 @@ doubao-work-handbook/
 ├── skills/andy-work-qa/   # 平台中立的交付质检方法示例
 ├── scripts/build.py       # 同源生成网站 + PDF
 ├── tests/                 # 本地浏览器交互检查
-├── docs/                  # 可供独立 GitHub Pages 发布的静态站
+├── docs/                  # 工作流上传的 Pages 发布目录
 ├── downloads/             # 可选中文本、书签和可点链接的 PDF
-└── index.html             # 个人 GitHub Pages 项目目录直接服务
+└── index.html             # 与 docs/index.html 同源，构建后复制进发布目录
 ```
 
 ### 在本地构建
@@ -73,15 +75,13 @@ python tests/browser_smoke.py
 
 ### GitHub Pages
 
-本项目已单独开源：[AIPMAndy/doubao-work-handbook](https://github.com/AIPMAndy/doubao-work-handbook)。**实际状态分两层**：独立仓库内容完整但独立 Pages 尚未启用；相同对外路径的静态页面与 PDF 已保存在 [AIPMAndy.github.io 根站](https://github.com/AIPMAndy/AIPMAndy.github.io/tree/main/doubao-work-handbook)，根站 [2026-11-14 Pages 构建成功](https://github.com/AIPMAndy/AIPMAndy.github.io/actions/runs/43614088743)。尚未从外部设备独立完成 HTTP/真实手机验收。
+2026-11-15 复查 [https://aipmandy.github.io/doubao-work-handbook/](https://aipmandy.github.io/doubao-work-handbook/)：HTTP 200，`text/html; charset=utf-8`，96491 字节，SHA-256 `bd1a937290244b95ccd2a59d89a4921113be37bf2b8a8f12fbfd04b1ba5af654`，与当时本仓库 `index.html` 一致。`GET /repos/AIPMAndy/doubao-work-handbook` 报告 `has_pages: true`，Pages `html_url` 就是该地址，`build_type` 为 `workflow`。本次不改 `.github/workflows/pages.yml`，也不改发布源。
 
 - [仓库源码与原始 PDF](https://github.com/AIPMAndy/doubao-work-handbook)（PDF 路径：`downloads/doubao-work-handbook.pdf`）
-- [根站对应访问地址](https://aipmandy.github.io/doubao-work-handbook/)（根站构建成功；外网与手机验收待核实）
-- [根站对应 PDF](https://aipmandy.github.io/doubao-work-handbook/downloads/doubao-work-handbook.pdf)（根站文件已存在；下载响应待核实）
+- [在线首页](https://aipmandy.github.io/doubao-work-handbook/)
+- [在线 PDF](https://aipmandy.github.io/doubao-work-handbook/downloads/doubao-work-handbook.pdf)
 
-**独立部署阻塞（2026-11-15）**：[最新独立 Pages 工作流 #43691406884](https://github.com/AIPMAndy/doubao-work-handbook/actions/runs/43691406884)（此前 [#43684859234](https://github.com/AIPMAndy/doubao-work-handbook/actions/runs/43684859234) 在 `actions/configure-pages@v5` 报 `Get Pages site failed: Not Found`。尚未完成本仓库的 Pages 首次启用，不能将仓库和 PDF 已存在等同于线上站点成功发布。
-
-**唯一需要仓库管理员手动完成的发布设置**：打开 [Settings → Pages](https://github.com/AIPMAndy/doubao-work-handbook/settings/pages)，在 **Build and deployment → Source** 选择 **GitHub Actions** 并保存。然后到 [Deploy independent GitHub Pages 工作流](https://github.com/AIPMAndy/doubao-work-handbook/actions/workflows/pages.yml) 使用 **Run workflow**（选择 `main`）。工作流成功后，实际打开首页与 PDF 并核验移动端、品牌入口和下载。无需重复建仓；当前失败不说明需要修改 `BASE`。
+工作流 [Deploy independent GitHub Pages #43693972150](https://github.com/AIPMAndy/doubao-work-handbook/actions/runs/43693972150) 于 2026-11-15 结论为 success。更早的 [#43691406884](https://github.com/AIPMAndy/doubao-work-handbook/actions/runs/43691406884) 与 [#43684859234](https://github.com/AIPMAndy/doubao-work-handbook/actions/runs/43684859234) 曾失败，不能代表这次复查时的线上状态。
 
 ## 可验证与安全约束
 
@@ -91,6 +91,13 @@ python tests/browser_smoke.py
 - 工具能力和“内容生成效果”不等于实测成功。模板经编写审阅，**未声称 32 个任务均经客户端逐一实测**。
 - 网站零账号、零追踪、无服务端上传；所有任务生成器输入仅在当前浏览器页面加工。
 - 脱敏材料优先、最小权限、操作前预演和必要人工审批。
+
+## 常见问题
+
+- **不同账号看到的功能一样吗？** 不一样。入口、账号身份、订阅权益和企业管理员配置都会影响能力，不能保证每个功能在每个账户都可用。
+- **手册里的数字和人物是真实客户吗？** 不是。模拟数据、人物、时间和营业额数字都是教学模拟。
+- **32 个模板都在客户端跑过吗？** 没有这样声称。模板经过编写审阅，未在客户端逐一实测。
+- **阅读或下载要注册吗？** 不要。网站不需要注册或留资。
 
 ## 参考资料
 
@@ -105,7 +112,7 @@ python tests/browser_smoke.py
 
 ## 作者 / 免费教程 / 合作入口
 
-本开源攻略由 **AI 酋长 Andy（前腾讯/百度 AI 产品专家、前大模型公司 VP）**维护，持续分享个人 AI 产品化和企业 AI 获客的实操方法。**不加微信也能看完整教程和下载模板。**
+本开源攻略由 **AI酋长Andy（流量 AI 联合创始人、星觉 AI 创始人）**维护，持续分享个人 AI 产品化和企业 AI 获客的实操方法。星觉科技，北京。**不加微信也能看完整教程和下载模板。**
 
 - 微信：**`AIPMAndy`**（添加时请说明来自“豆包工作开源攻略”）
 - 个人官网：<https://metaver.vip/>
