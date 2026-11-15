@@ -4,7 +4,7 @@
 
 **把 AI 从“聊天助手”用成“完成工作的 Agent”。**
 
-[📘 计划在线站点（待启用 Pages）](https://aipmandy.github.io/doubao-work-handbook/) · [📄 PDF（40 页）](https://aipmandy.github.io/doubao-work-handbook/downloads/doubao-work-handbook.pdf) · [🛠 32 个任务模板](content/prompts.json) · [🔗 豆包工作官方入口](https://www.doubao.com/work)
+[📘 根站已构建的在线版（独立 Pages 待启用）](https://aipmandy.github.io/doubao-work-handbook/) · [📄 PDF（40 页）](https://aipmandy.github.io/doubao-work-handbook/downloads/doubao-work-handbook.pdf) · [🛠 32 个任务模板](content/prompts.json) · [🔗 豆包工作官方入口](https://www.doubao.com/work)
 
 **版本** v1.0（2026-11-14） · **作者** AI 酋长 Andy / 星觉科技 · **原创独立第三方开源教程，非豆包、字节跳动或飞书官方资料**
 
@@ -73,13 +73,13 @@ python tests/browser_smoke.py
 
 ### GitHub Pages
 
-本项目已单独开源：[AIPMAndy/doubao-work-handbook](https://github.com/AIPMAndy/doubao-work-handbook)。此前共享站点目录仅保留历史兼容。
+本项目已单独开源：[AIPMAndy/doubao-work-handbook](https://github.com/AIPMAndy/doubao-work-handbook)。**实际状态分两层**：独立仓库内容完整但独立 Pages 尚未启用；相同对外路径的静态页面与 PDF 已保存在 [AIPMAndy.github.io 根站](https://github.com/AIPMAndy/AIPMAndy.github.io/tree/main/doubao-work-handbook)，根站 [2026-11-14 Pages 构建成功](https://github.com/AIPMAndy/AIPMAndy.github.io/actions/runs/43614088743)。尚未从外部设备独立完成 HTTP/真实手机验收。
 
 - [仓库源码与原始 PDF](https://github.com/AIPMAndy/doubao-work-handbook)（PDF 路径：`downloads/doubao-work-handbook.pdf`）
-- [计划在线网站](https://aipmandy.github.io/doubao-work-handbook/)（**首次启用 Pages 并部署成功后**才可视作上线）
-- [计划在线 PDF](https://aipmandy.github.io/doubao-work-handbook/downloads/doubao-work-handbook.pdf)（部署成功后核验）
+- [根站对应访问地址](https://aipmandy.github.io/doubao-work-handbook/)（根站构建成功；外网与手机验收待核实）
+- [根站对应 PDF](https://aipmandy.github.io/doubao-work-handbook/downloads/doubao-work-handbook.pdf)（根站文件已存在；下载响应待核实）
 
-**部署阻塞（2026-11-15）**：[独立 Pages 工作流 #43684859234](https://github.com/AIPMAndy/doubao-work-handbook/actions/runs/43684859234) 在 `actions/configure-pages@v5` 报 `Get Pages site failed: Not Found`。尚未完成本仓库的 Pages 首次启用，不能将仓库和 PDF 已存在等同于线上站点成功发布。
+**独立部署阻塞（2026-11-15）**：[最新独立 Pages 工作流 #43691406884](https://github.com/AIPMAndy/doubao-work-handbook/actions/runs/43691406884)（此前 [#43684859234](https://github.com/AIPMAndy/doubao-work-handbook/actions/runs/43684859234) 在 `actions/configure-pages@v5` 报 `Get Pages site failed: Not Found`。尚未完成本仓库的 Pages 首次启用，不能将仓库和 PDF 已存在等同于线上站点成功发布。
 
 **唯一需要仓库管理员手动完成的发布设置**：打开 [Settings → Pages](https://github.com/AIPMAndy/doubao-work-handbook/settings/pages)，在 **Build and deployment → Source** 选择 **GitHub Actions** 并保存。然后到 [Deploy independent GitHub Pages 工作流](https://github.com/AIPMAndy/doubao-work-handbook/actions/workflows/pages.yml) 使用 **Run workflow**（选择 `main`）。工作流成功后，实际打开首页与 PDF 并核验移动端、品牌入口和下载。无需重复建仓；当前失败不说明需要修改 `BASE`。
 
